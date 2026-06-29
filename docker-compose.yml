@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: perfilprofesionalia_postgres
+    environment:
+      POSTGRES_DB: perfilprofesionalia
+      POSTGRES_USER: perfil_user
+      POSTGRES_PASSWORD: perfil_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: perfilprofesionalia_redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
+

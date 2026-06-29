@@ -1,0 +1,30 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Entornos
+.env
+.env.local
+.env.*.local
+
+# Node
+node_modules/
+dist/
+build/
+
+# Laravel
+backend/vendor/
+backend/storage/logs/*.log
+backend/bootstrap/cache/*.php
+
+# Python
+__pycache__/
+.venv/
+*.pyc
+
+# Docker
+docker-data/
+
+# IDE
+.vscode/
+
