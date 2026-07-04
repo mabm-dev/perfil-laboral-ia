@@ -10,6 +10,7 @@ function LoginPage() {
     function handleSubmit(event) {
         event.preventDefault()
         console.log('Intento de acceso', email, password)
+        localStorage.setItem('sesion', 'activa')
         navigate('/dashboard')
     }
 
