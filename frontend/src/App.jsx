@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './App.css';
+import TextField from './components/TextField';
 
 function App() {
   const [email, setEmail] = useState('')
@@ -17,25 +18,19 @@ function App() {
 
       <form className="login-form" onSubmit={handleSubmit}>
         <label>
-          Email 
-          <input
+          <TextField
+            label="Email"
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+            onChange={setEmail}
           />
-        </label>
-
-        <label>
-          Contraseña
-          <input
+          <TextField
+            label="Contraseña"
             type="password"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+            onChange={setPassword}
           />
-        </label>
-
+        </label>  
         <button type="submit">Entrar</button>
       </form>
     </main>
