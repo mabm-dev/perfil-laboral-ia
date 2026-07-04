@@ -3,9 +3,9 @@ services:
     image: postgres:16
     container_name: perfilprofesionalia_postgres
     environment:
-      POSTGRES_DB: perfilprofesionalia
-      POSTGRES_USER: perfil_user
-      POSTGRES_PASSWORD: perfil_password
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     ports:
       - "5432:5432"
     volumes:
