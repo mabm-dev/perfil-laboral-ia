@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import TextField from '../components/TextField'
+import { apiPost } from '../api'
 
 function LoginPage() {
     const [email, setEmail] = useState('')
@@ -12,29 +13,14 @@ function LoginPage() {
         event.preventDefault()
         setError('')
 
-        try{
-            const response = await
-            fetch('http://localhost:8000/api/v1/login', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                Accept: 'application/json', },
-              body: JSON.stringify({ email, password}),
-            })
-            
-            const data = await response.json()
-
-            if (!response.ok) {
-                setError(data.message ?? 'Error al iniciar sesión')
-                return
-            }
-            
+        try {
+            const data = await apiPost('/login', { email, password })
             localStorage.setItem('token', data.token)
             navigate('/dashboard')
-            } catch {
-                setError('No se puede conectar con el servidor')
-            }
+        } catch (err) {
+            setError(err.message)
         }
+    }
         
     return (
         <main className="login-page">
