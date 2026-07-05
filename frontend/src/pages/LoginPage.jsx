@@ -18,7 +18,7 @@ function LoginPage() {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                Accept: 'aplicattion/json', },
+                Accept: 'application/json', },
               body: JSON.stringify({ email, password}),
             })
             
@@ -35,7 +35,7 @@ function LoginPage() {
                 setError('No se puede conectar con el servidor')
             }
         }
-
+        
     return (
         <main className="login-page">
             <h1>PerfilLaboralIA</h1>
