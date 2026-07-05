@@ -33,6 +33,7 @@ function DashboardPage() {
             <section>
                 <p>Aquí verás tus candidaturas, tu CV y tus análisis de compativilidad</p>
                 <Link to="/ofertas">Mis ofertas</Link>
+                <Link to="/cvs">Mis CVs</Link>
             </section>
 
             <button type="button" onClick={handleLogout}>Cerrar sesión</button>

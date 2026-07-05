@@ -5,6 +5,7 @@ import DashboardPage from './pages/DashboardPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 import OffersPage from './pages/OffersPage'
+import CvsPage from './pages/CvsPage'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/registro" element={<RegisterPage />} />
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         <Route path="/ofertas" element={<ProtectedRoute><OffersPage /></ProtectedRoute>} />
+        <Route path="/cvs" element={<ProtectedRoute><CvsPage /></ProtectedRoute>} />
       </Routes>
     </BrowserRouter>
   )
