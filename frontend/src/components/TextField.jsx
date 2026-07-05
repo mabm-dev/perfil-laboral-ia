@@ -1,4 +1,4 @@
-function TextField({ label, type, value, onChange}) {
+function TextField({ label, type, value, onChange, required = true}) {
     return (
         <label>
             {label}
@@ -6,7 +6,7 @@ function TextField({ label, type, value, onChange}) {
                 type={type}
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
-                required
+                required ={required}
             />
         </label>
     )

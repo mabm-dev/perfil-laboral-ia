@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { apiGet } from "../api";
 
 function DashboardPage() {
@@ -32,6 +32,7 @@ function DashboardPage() {
 
             <section>
                 <p>Aquí verás tus candidaturas, tu CV y tus análisis de compativilidad</p>
+                <Link to="/ofertas">Mis ofertas</Link>
             </section>
 
             <button type="button" onClick={handleLogout}>Cerrar sesión</button>
