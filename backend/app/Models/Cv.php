@@ -12,4 +12,9 @@ class Cv extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function analyses()
+    {
+    return $this->hasMany(Analysis::class);
+    }
 }
