@@ -4,6 +4,8 @@ PerfilLaboralIA es una aplicacion web para ayudar a personas a mejorar su perfil
 
 La primera version permitira subir un CV, pegar una oferta de trabajo y recibir un analisis de compatibilidad con recomendaciones concretas para mejorar la candidatura.
 
+PerfilLaboralIA esta disenado como el primer modulo de una plataforma de herramientas de carrera profesional que compartiran backend y servicio de IA.
+
 ## Objetivo del MVP
 
 Crear una primera version funcional donde el usuario pueda:
@@ -62,4 +64,21 @@ Usuario -> sube CV -> pega oferta -> PerfilLaboralIA analiza -> muestra resultad
 
 ## Estado actual
 
-Proyecto en fase inicial de planificacion y preparacion de estructura.
+- Entorno de desarrollo con Docker (PostgreSQL 16 y Redis 7).
+- API REST versionada (/api/v1) con Laravel 13.
+- Autenticacion completa con tokens (Laravel Sanctum): registro, login y rutas protegidas.
+- Frontend React con Vite: formularios, navegacion SPA y area privada conectada a la API.
+- Modelos de datos del nucleo: CV, oferta y analisis, con sus relaciones.
+
+## Puesta en marcha
+
+Requisitos: Docker, PHP 8.5+, Composer, Node 24+.
+
+1. Clonar el repositorio y copiar la configuracion:
+   - `cp .env.example .env`
+   - `cp backend/.env.example backend/.env`
+   - Rellenar las contrasenas en ambos archivos.
+2. Levantar la infraestructura: `docker compose up -d`
+3. Backend: `cd backend && composer install && php artisan migrate && php artisan serve`
+4. Frontend: `cd frontend && npm install && npm run dev`
+5. Abrir http://localhost:5173
